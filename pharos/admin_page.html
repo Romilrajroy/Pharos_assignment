@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        #sidebar-wrapper {
+            z-index: 1;
+            position: absolute;
+            width: 0;
+            height: 100%;
+            overflow-y: hidden;
+            background: black;
+        }
+
+        #page-content-wrapper {
+            width: 100%;
+            position: absolute;
+            padding: 15px;
+        }
+
+        #wrapper.menuDisplayed #sidebar-wrapper {
+            width: 250px;
+        }
+
+        #wrapper.menuDisplayed #page-content-wrapper {
+            padding-left: 250px;
+        }
+
+        .sidebar-nav {
+            padding: 0;
+            list-style: none;
+        }
+
+            .sidebar-nav li {
+                text-indent: 20px;
+                line-height: 40px;
+            }
+
+                .sidebar-nav li a {
+                    display: block;
+                    text-decoration: none;
+                    color: #ddd;
+                }
+
+                    .sidebar-nav li a:hover {
+                        background: #808080;
+                    }
+
+        .card {
+            /* Add shadows to create the "card" effect */
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+
+            /* On mouse-over, add a deeper shadow */
+            .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+
+        /* Add some padding inside the card container */
+        .container {
+            padding: 2px 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+
+            <!--logo & collapsable navbar-->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">UserName</a>
+            </div>
+            <!--menu bar-->
+            <div class="collapse navbar-collapse" id="mainNavBar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Content</a></li>
+                    <li><a href="#">About</a></li>
+
+                    <!--drop down menu-->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Songs<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">seek and distroy</a></li>
+                            <li><a href="#">Metal milita</a></li>
+                            <li><a href="#">pulling teeth anesthesia</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+                <!-- right align-->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">LogOut</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="wrapper">
+
+        <!--sidebar-->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li><a href="catogories.html"><h3>CATOGORIES</h3></a></li>
+                <li><a href="Products.html"><h3>PRODUCTS</h3></a></li>
+                <li><a href="signup.html"><h3>LOGOUT</a></h3></li>
+            </ul>
+        </div>
+        <!--page content-->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-4">
+
+                            <div class="card">
+                                <img src="product.jpg" alt="Product" style="width:100%">
+                                
+                                    <a href="products.html"><h3><b>Search by Products</b></h3></a>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <img src="catogories.gif" alt="catagories" style="width:100%">
+                                    
+                                        <a href="catogories.html"><h3><b>Search by Catogories</b></h3></a>
+                                        
+                                    </div>
+                                </div>
+                                </div>
+                                <a href="#" class="btn btn-success" id="menu-toggle"> &#9776;</a> 
+
+                            </div>
+                        </div>
+
+
+
+            </div>
+
+        
+
+    
+    <!-- menu toggle script-->
+    <script>
+        $("#menu-toggle").click(function (a) {
+            a.preventDefault();
+            $("#wrapper").toggleClass("menuDisplayed");
+
+        });
+
+    </script>
+
+
+</body>
+</html>
